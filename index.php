@@ -70,7 +70,23 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
         foreach ($hotels as $currentHotel){
             echo " 
             <li>
-            " . $currentHotel['name'] . "
+                <ul>
+                    <li>
+                    " . $currentHotel['name'] . "
+                    </li>
+                    <li>
+                    " . $currentHotel['description'] . "
+                    </li>
+                    <li>
+                    " . $currentHotel['parking'] . "
+                    </li>
+                    <li>
+                    " . $currentHotel['vote'] . "
+                    </li>
+                    <li>
+                    " . $currentHotel['distance_to_center'] . "
+                    </li>
+                </ul>
             </li>
             ";
         }
