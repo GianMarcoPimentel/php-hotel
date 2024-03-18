@@ -145,6 +145,7 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
             <br>
             <label for="voto">Voto minimo:</label>
             <select id="voto" name="voto">
+                <option value=" ">  </option>
                 <option value="1"> 1 </option>
                 <option value="2"> 2 </option>
                 <option value="3"> 3 </option>
@@ -168,7 +169,7 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
             } 
             if($voto !== ""){
                 $hotels = array_filter($hotels, function($currentHotel) use ($voto) {
-                    return $currentHotel['vote'] > $voto;
+                    return $currentHotel['vote'] >= $voto;
                    });
             }
 
