@@ -59,73 +59,83 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>PHP-Hotel</title>
 </head>
 <body>
     <h1>Hotels</h1>
 
-    
-
-        <?php
-        // var_dump($hotels);
-        /* foreach ($hotels as $currentHotel){
+    <div class="container">
+        <table class="table">
+           <?php
+           // var_dump($hotels);
+           /* foreach ($hotels as $currentHotel){
+               
+                   foreach ($currentHotel as $currentHotelPropriety){
+                       echo "
+                       <li>
+                       " . $currentHotelPropriety . "
+                       
+                       </li>
+                       ";
+                   } 
+           } */
+           
+           echo "<tr>";
+           echo "<th> Nome Hotel </th>";
+           foreach ($hotels as $currentHotel) {
+               echo "<th>
+               " . $currentHotel['name'] . "
+               </th>";
+           }
+           echo "</tr>";
+   
+           echo "<tr>";
+           echo "<th> Descrizione </th>";
+           foreach ($hotels as $currentHotel) {
+               echo "<td>
+               " . $currentHotel['description'] . "
+               </td>";
+           }
+           echo "</tr>";
+   
+           
+           echo "<tr>";
+           echo "<th> Parcheggio </th>";
+           foreach ($hotels as $currentHotel) {
             
-                foreach ($currentHotel as $currentHotelPropriety){
-                    echo "
-                    <li>
-                    " . $currentHotelPropriety . "
-                    
-                    </li>
-                    ";
-                } 
-        } */
-        echo "<table>";
-        echo "<tr>";
-        foreach ($hotels as $currentHotel) {
-            echo "<th>
-            " . $currentHotel['name'] . "
-            </th>";
-        }
-        echo "</tr>";
-
-        echo "<tr>";
-        foreach ($hotels as $currentHotel) {
-            echo "<td>
-            " . $currentHotel['description'] . "
-            </td>";
-        }
-        echo "</tr>";
-
-        echo "<tr>";
-        foreach ($hotels as $currentHotel) {
-            echo "<td>
-            " . $currentHotel['parking'] . "
-            </td>";
-        }
-        echo "</tr>";
-
-        echo "<tr>";
-        foreach ($hotels as $currentHotel) {
-            echo "<td>
-            " . $currentHotel['vote'] . "
-            </td>";
-        }
-        echo "</tr>";
-
-        echo "<tr>";
-        foreach ($hotels as $currentHotel) {
-            echo "<td>
-            " . $currentHotel['distance_to_center'] . "
-            </td>";
-        }
-        echo "</tr>";
-
-        echo "</table>";
-
-        ?>
+               echo "<td>
+               " . $currentHotel['parking'] . "
+               </td>";
+           }
+           echo "</tr>";
+   
+           echo "<tr>";
+           echo "<th> Voto  </th>";
+           foreach ($hotels as $currentHotel) {
+               echo "<td>
+               " . $currentHotel['vote'] . "
+               </td>";
+           }
+           echo "</tr>";
+   
+           echo "<tr>";
+           echo "<th> Distanza </th>";
+           foreach ($hotels as $currentHotel) {
+               echo "<td>
+               " . $currentHotel['distance_to_center'] . "
+               </td>";
+           }
+           echo "</tr>";
+   
+           
+           ?>
+           
+           </table>
+    </div>
 
     
-    
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
 
