@@ -82,7 +82,7 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
            } */
            
            echo "<tr>";
-           echo "<th> Nome Hotel </th>";
+           echo "<th> Nome </th>";
            foreach ($hotels as $currentHotel) {
                echo "<th>
                " . $currentHotel['name'] . "
@@ -132,6 +132,17 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
            ?>
            
            </table>
+    </div>
+    
+    <div class="container">
+        <form action="filtered.php" method="get">
+            <label for="parcheggio">Parcheggio:</label>
+                <select id="parcheggio" name="parcheggio">
+                    <option value="true">Sì</option>
+                    <option value="false">No</option>
+                </select>
+            <input type="submit">
+    </form>
     </div>
 
     
