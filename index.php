@@ -68,7 +68,7 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
 
         <?php
         // var_dump($hotels);
-        foreach ($hotels as $currentHotel){
+        /* foreach ($hotels as $currentHotel){
             
                 foreach ($currentHotel as $currentHotelPropriety){
                     echo "
@@ -77,12 +77,51 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
                     
                     </li>
                     ";
-                }
-                
-           
-
-            
+                } 
+        } */
+        echo "<table>";
+        echo "<tr>";
+        foreach ($hotels as $currentHotel) {
+            echo "<th>
+            " . $currentHotel['name'] . "
+            </th>";
         }
+        echo "</tr>";
+
+        echo "<tr>";
+        foreach ($hotels as $currentHotel) {
+            echo "<td>
+            " . $currentHotel['description'] . "
+            </td>";
+        }
+        echo "</tr>";
+
+        echo "<tr>";
+        foreach ($hotels as $currentHotel) {
+            echo "<td>
+            " . $currentHotel['parking'] . "
+            </td>";
+        }
+        echo "</tr>";
+
+        echo "<tr>";
+        foreach ($hotels as $currentHotel) {
+            echo "<td>
+            " . $currentHotel['vote'] . "
+            </td>";
+        }
+        echo "</tr>";
+
+        echo "<tr>";
+        foreach ($hotels as $currentHotel) {
+            echo "<td>
+            " . $currentHotel['distance_to_center'] . "
+            </td>";
+        }
+        echo "</tr>";
+
+        echo "</table>";
+
         ?>
 
     
@@ -108,29 +147,29 @@ echo "</tr>";
 echo "</table>";
  -->
 
-<!-- <?php
-         var_dump($hotels);
-        foreach ($hotels as $currentHotel){
-            echo " 
-            <li>
-                <ul>
-                    <li>
-                    " . $currentHotel['name'] . "
-                    </li>
-                    <li>
-                    " . $currentHotel['description'] . "
-                    </li>
-                    <li>
-                    " . $currentHotel['parking'] . "
-                    </li>
-                    <li>
-                    " . $currentHotel['vote'] . "
-                    </li>
-                    <li>
-                    " . $currentHotel['distance_to_center'] . "
-                    </li>
-                </ul>
-            </li>
-            ";
-        }
-        ?> -->
+<!-- 
+         //var_dump($hotels);
+        //foreach ($hotels as $currentHotel){
+            //echo " 
+            //<li>
+                //<ul>
+                   // <li>
+                   // " . $currentHotel['name'] . "
+                    //</li>
+                  //  <li>
+                    //" . $currentHotel['description'] . "
+                    //</li>
+                    //<li>
+                   // " . $currentHotel['parking'] . "
+                   // </li>
+                   // <li>
+                  //  " . $currentHotel['vote'] . "
+                   // </li>
+                  //  <li>
+                   // " . $currentHotel['distance_to_center'] . "
+                   // </li>
+               // </ul>
+          //  </li>
+           // ";
+       // }
+       //  -->
