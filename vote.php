@@ -39,46 +39,31 @@
         ],
 
     ];
-   $parking = $_GET['parcheggio'];
+   
 
-  
+   $voto = $_GET['voto'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP-Filtered-Parking-Hotels</title>
+    <title>PHP-Filtered-Hotels</title>
 </head>
 <body>
-    <h1>Filtered-Hotels</h1>
+    <h1>Filtered-Vote-Hotels</h1>
 
     <?php
-    // filtro gli hotel in base al parcheggio
-        $filteredHotels = [];
-        
-        
-            if($parking == true ){
-              $hotels = array_filter($hotels, function($currentHotel) {
-                return $currentHotel['parking'] == true;
-               });
-            } 
+    $filteredHotels = [];
 
-            foreach ($hotels as $currentHotel) {
-                echo " <p> {$currentHotel['name']}</p> ";
-             }
-
-    // mostro i risultati in pagina
-   /*  echo "Hotel con parcheggio: " . ($parking == true ? 'Si' : ' ') . " ";
-    echo "<ul>";
-    foreach ($filteredHotels as $currentHotel) {
-        echo "
-            <li>
-                " . $currentHotel['name'] . ";
-            </li>
-        ";
-    } 
-    echo "</ul>"; */
+    if($voto !== ""){
+        $hotels = array_filter($hotels, function($currentHotel) use ($voto) {
+            return $currentHotel['vote'] > $voto;
+           });
+    }
+    foreach ($hotels as & $currentHotel) {
+        echo " <p> {$currentHotel['name']} voto: {$currentHotel['vote']} </p> ";
+    }
     ?>
 </body>
 </html>

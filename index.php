@@ -137,11 +137,27 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
     <div class="container">
         <form action="filtered.php" method="get">
             <label for="parcheggio">Parcheggio:</label>
-                <select id="parcheggio" name="parcheggio">
+            <input type="checkbox" name="parcheggio" id="parcheggio" value="true">
+
+                <!-- <select id="parcheggio" name="parcheggio">
                     <option value="true">Sì</option>
                     <option value="false">No</option>
-                </select>
+                </select> -->
             <input type="submit">
+    </form>
+    </div>
+
+    <div class="container">
+        <form action="vote.php" method="get">
+        <label for="voto">Voto minimo:</label>
+        <select id="voto" name="voto">
+            <option value="1"> 1 </option>
+            <option value="2"> 2 </option>
+            <option value="3"> 3 </option>
+            <option value="4"> 4 </option>
+            <option value="5"> 5 </option>
+        </select>
+    <input type="submit" value="Ricerca">
     </form>
     </div>
 
