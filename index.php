@@ -136,30 +136,24 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
     
     <div class="container">
         <form action="filtered.php" method="get">
+
             <label for="parcheggio">Parcheggio:</label>
             <input type="checkbox" name="parcheggio" id="parcheggio" value="true">
-
-                <!-- <select id="parcheggio" name="parcheggio">
-                    <option value="true">Sì</option>
-                    <option value="false">No</option>
-                </select> -->
-            <input type="submit">
-    </form>
+            <br>
+            <label for="voto">Voto minimo:</label>
+            <select id="voto" name="voto">
+                <option value="1"> 1 </option>
+                <option value="2"> 2 </option>
+                <option value="3"> 3 </option>
+                <option value="4"> 4 </option>
+                <option value="5"> 5 </option>
+            </select>
+             <input type="submit" value="Ricerca">
+            
+        </form>
     </div>
 
-    <div class="container">
-        <form action="vote.php" method="get">
-        <label for="voto">Voto minimo:</label>
-        <select id="voto" name="voto">
-            <option value="1"> 1 </option>
-            <option value="2"> 2 </option>
-            <option value="3"> 3 </option>
-            <option value="4"> 4 </option>
-            <option value="5"> 5 </option>
-        </select>
-    <input type="submit" value="Ricerca">
-    </form>
-    </div>
+   
 
     
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

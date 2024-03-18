@@ -41,6 +41,8 @@
     ];
    $parking = $_GET['parcheggio'];
 
+   $voto = $_GET['voto'];
+
   
 ?>
 <!DOCTYPE html>
@@ -63,9 +65,14 @@
                 return $currentHotel['parking'] == true;
                });
             } 
+            if($voto !== ""){
+                $hotels = array_filter($hotels, function($currentHotel) use ($voto) {
+                    return $currentHotel['vote'] > $voto;
+                   });
+            }
 
             foreach ($hotels as $currentHotel) {
-                echo " <p> {$currentHotel['name']}</p> ";
+                echo " <p> {$currentHotel['name']} voto: {$currentHotel['vote']}</p> ";
              }
 
     // mostro i risultati in pagina
