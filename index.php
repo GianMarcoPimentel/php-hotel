@@ -33,22 +33,22 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
             'name' => 'Hotel Rivamare',
             'description' => 'Hotel Rivamare Descrizione',
             'parking' => false,
-            'vote' => 1,
-            'distance_to_center' => 1
+            'vote' => 1, 
+            'distance_to_center' => 1,
         ],
         [
             'name' => 'Hotel Bellavista',
             'description' => 'Hotel Bellavista Descrizione',
             'parking' => false,
             'vote' => 5,
-            'distance_to_center' => 5.5
+            'distance_to_center' => 5.5,
         ],
         [
             'name' => 'Hotel Milano',
             'description' => 'Hotel Milano Descrizione',
             'parking' => true,
             'vote' => 2,
-            'distance_to_center' => 50
+            'distance_to_center' => 50,
         ],
 
     ];
