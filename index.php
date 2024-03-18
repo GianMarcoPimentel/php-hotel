@@ -53,6 +53,9 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
 
     ];
 
+    $parking = $_GET['parcheggio'];
+
+    $voto = $_GET['voto'];
 ?>
 <!DOCTYPE html>
 <html lang="it">
@@ -135,7 +138,7 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
     </div>
     
     <div class="container">
-        <form action="filtered.php" method="get">
+        <form action="index.php" method="get">
 
             <label for="parcheggio">Parcheggio:</label>
             <input type="checkbox" name="parcheggio" id="parcheggio" value="true">
@@ -152,6 +155,29 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
             
         </form>
     </div>
+
+    <?php
+    // filtro gli hotel in base al parcheggio
+        $filteredHotels = [];
+        
+        
+            if($parking == true ){
+              $hotels = array_filter($hotels, function($currentHotel) {
+                return $currentHotel['parking'] == true;
+               });
+            } 
+            if($voto !== ""){
+                $hotels = array_filter($hotels, function($currentHotel) use ($voto) {
+                    return $currentHotel['vote'] > $voto;
+                   });
+            }
+
+            foreach ($hotels as $currentHotel) {
+                echo " <p> {$currentHotel['name']} voto: {$currentHotel['vote']}</p> ";
+             }
+
+            
+    ?>
 
    
 
