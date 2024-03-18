@@ -63,10 +63,53 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
 </head>
 <body>
     <h1>Hotels</h1>
-    <ul>
+
+    
 
         <?php
         // var_dump($hotels);
+        foreach ($hotels as $currentHotel){
+            
+                foreach ($currentHotel as $currentHotelPropriety){
+                    echo "
+                    <li>
+                    " . $currentHotelPropriety . "
+                    
+                    </li>
+                    ";
+                }
+                
+           
+
+            
+        }
+        ?>
+
+    
+    
+</body>
+</html>
+
+
+<!-- 
+echo "<table>";
+echo "<tr>";
+foreach ($array as $elemento) {
+  echo "<th>$elemento</th>";
+}
+echo "</tr>";
+
+echo "<tr>";
+foreach ($array as $elemento) {
+  echo "<td>$elemento</td>";
+}
+echo "</tr>";
+
+echo "</table>";
+ -->
+
+<!-- <?php
+         var_dump($hotels);
         foreach ($hotels as $currentHotel){
             echo " 
             <li>
@@ -90,47 +133,4 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
             </li>
             ";
         }
-        ?>
-
-        <hr>
-        <?php
-        // var_dump($hotels);
-        foreach ($hotels as $currentHotel){
-            echo " 
-            <li>
-                <ul>
-                ";
-                foreach ($currentHotel as $currentHotelPropriety){
-                    echo "
-                    <li>
-                    " . $currentHotelPropriety . "
-                    
-                    </li>
-                    ";
-                }
-                
-            echo "
-                </ul>
-            </li>
-            
-            ";  
-
-            
-        }
-        ?>
-
-    </ul>
-    
-</body>
-</html>
-
-<!--  foreach ($hotels as $currentHotel){
-            echo "
-            <ul>
-                <li>
-                    " . $currentHotel .";
-                </li>
-                
-            </ul>
-            ";
-        }  -->
+        ?> -->
