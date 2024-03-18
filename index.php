@@ -92,6 +92,33 @@ Se non viene specificato nessun filtro, visualizzare come in precedenza tutti gl
         }
         ?>
 
+        <hr>
+        <?php
+        // var_dump($hotels);
+        foreach ($hotels as $currentHotel){
+            echo " 
+            <li>
+                <ul>
+                ";
+                foreach ($currentHotel as $currentHotelPropriety){
+                    echo "
+                    <li>
+                    " . $currentHotelPropriety . "
+                    
+                    </li>
+                    ";
+                }
+                
+            echo "
+                </ul>
+            </li>
+            
+            ";  
+
+            
+        }
+        ?>
+
     </ul>
     
 </body>
